@@ -1,0 +1,43 @@
+<!doctype HTML>
+<html>
+<head>
+<script src="flapjax/src/flapjax.min.js"></script>
+<script src="dictionary.js"></script>
+<link rel="stylesheet" href="pretty.css"></link>
+</head>
+<body>
+
+<label>Filter by:</label>
+<input type='text' id='filter'></input>
+
+<label>Filtering on:</label>
+<span>
+  <span id='filtering'></span>
+</span>
+
+<div id='words'> </div>
+</body>
+
+<script>
+
+  var theFilterB = F.extractValueB(F.$('filter'));
+  var theFilterDOM = SPAN(theFilterB);
+  F.insertDomB(theFilterDOM, F.$('filtering'));
+
+  var theWordsB = theFilterB.liftB(function(currentFilter) {
+    return dict.filter(function(dictWord) {
+      return dictWord.indexOf(currentFilter) !== -1;
+    });
+  });
+
+  var theWordsDOM = UL(theWordsB.liftB(function(words) {
+    return words.map(function(word) {
+      return LI(word);
+    })
+  }));
+  F.insertDomB(theWordsDOM, F.$('words'));
+
+</script>
+
+</html>
+

@@ -1,0 +1,36 @@
+input {
+  height: 3em;
+  width: 10em;
+  border-radius: 5px;
+  margin-right: 2em;
+  font-size: 14pt;
+  text-align: center;
+}
+label {
+  font-weight: bold;
+  font-size: 16pt;
+}
+li {
+  list-style: none;
+  padding: 1em;
+  margin: .2em;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  font-size: 14pt;
+  font-family: sans-serif;
+  font-weight: bold;
+  max-width: 10em;
+}
+span {
+  padding: 1em;
+  margin: .2em;
+  border-radius: 5px;
+  background-color: navy;
+  color: white;
+  font-size: 14pt;
+  font-family: sans-serif;
+  font-weight: bold;
+  min-width: 10em;
+  max-width: 10em;
+}
